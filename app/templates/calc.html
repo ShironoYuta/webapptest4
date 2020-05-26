@@ -1,0 +1,105 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+jQuery(function(){
+//	jQuery.getJSON('/simulate?input1='+ document.form2.param1.value + '&input2='+ document.form2.param2.value, function(data) {
+	jQuery.getJSON('/json' , function(data) {
+		  	document.form1.json_text1.value = JSON.stringify(data);
+		});
+	});
+
+//Update data for form2
+function updateForm2() {
+jQuery(function(){
+	   jQuery.getJSON('/simulate?input1='+ document.form2.param1.value + '&input2='+ document.form2.param2.value+
+					'&input3='+ document.form2.param3.value+'&input15='+ document.form2.param15.value+
+					'&input4='+ document.form2.param4.value+'&input16='+ document.form2.param16.value+
+					'&input5='+ document.form2.param5.value+'&input17='+ document.form2.param17.value+
+					'&input6='+ document.form2.param6.value+'&input18='+ document.form2.param18.value+
+					'&input7='+ document.form2.param7.value+'&input19='+ document.form2.param19.value+
+					'&input8='+ document.form2.param8.value+'&input20='+ document.form2.param20.value+
+					'&input9='+ document.form2.param9.value+'&input21='+ document.form2.param21.value+
+					'&input10='+ document.form2.param10.value+'&input22='+ document.form2.param22.value+
+					'&input11='+ document.form2.param11.value+'&input23='+ document.form2.param23.value+
+					'&input12='+ document.form2.param12.value+'&input24='+ document.form2.param24.value+
+					'&input13='+ document.form2.param13.value+'&input25='+ document.form2.param25.value+
+					'&input14='+ document.form2.param14.value+'&input26='+ document.form2.param26.value,
+						   function(data) {
+			  document.form2.output1.value = JSON.stringify(data.output1);
+			  document.form2.output2.value = JSON.stringify(data.output2);
+		});
+	});
+}
+
+
+function updateForm3() {
+	yyy.src = '/graph1.png?input1='
+	+ document.form3.annual.value + '&input2='
+	+ document.form3.scenario.value + '&input3='
+	+ document.form3.Simutype.value + '&input4='
+	+ document.form3.month.value + '&input5='
+	+ document.form2.param1.value + '&input6='
+	+ document.form2.param2.value +
+	'&input7='+ document.form2.param3.value+'&input19='+ document.form2.param15.value+
+	'&input8='+ document.form2.param4.value+'&input20='+ document.form2.param16.value+
+	'&input9='+ document.form2.param5.value+'&input21='+ document.form2.param17.value+
+	'&input10='+ document.form2.param6.value+'&input22='+ document.form2.param18.value+
+	'&input11='+ document.form2.param7.value+'&input23='+ document.form2.param19.value+
+	'&input12='+ document.form2.param8.value+'&input24='+ document.form2.param20.value+
+	'&input13='+ document.form2.param9.value+'&input25='+ document.form2.param21.value+
+	'&input14='+ document.form2.param10.value+'&input26='+ document.form2.param22.value+
+	'&input15='+ document.form2.param11.value+'&input27='+ document.form2.param23.value+
+	'&input16='+ document.form2.param12.value+'&input28='+ document.form2.param24.value+
+	'&input17='+ document.form2.param13.value+'&input29='+ document.form2.param25.value+
+	'&input18='+ document.form2.param14.value+'&input30='+ document.form2.param26.value
+}
+
+
+</script>
+  <h1>電力調達シミュレータ</h1>
+	<form name="form2" action="javascript:updateForm2()">
+		機械学習ルール<br>
+		Algorithm(現在は決定木のみ)<br>
+		<input type="text"  name="param1" value="decision"　readonly><br>
+		Term<br>
+		<select size="4" name="param2">
+			<option value="1year">1year</option>
+			<option value="6month">6month</option>
+			<option value="2month">2month</option>
+			<option value="2week">2week</option>
+		</select><br>
+		電力調達方針<br>
+		相対1月昼<input type="text"  name="param3" value="50" size = 5>相対1月夜<input type="text"  name="param15" value="50" size = 5><br>
+		相対2月昼<input type="text"  name="param4" value="50" size = 5>相対2月夜<input type="text"  name="param16" value="50" size = 5><br>
+		相対3月昼<input type="text"  name="param5" value="50" size = 5>相対3月夜<input type="text"  name="param17" value="50" size = 5><br>
+		相対4月昼<input type="text"  name="param6" value="50" size = 5>相対4月夜<input type="text"  name="param18" value="50" size = 5><br>
+		相対5月昼<input type="text"  name="param7" value="50" size = 5>相対5月夜<input type="text"  name="param19" value="50" size = 5><br>
+		相対6月昼<input type="text"  name="param8" value="50" size = 5>相対6月夜<input type="text"  name="param20" value="50" size = 5><br>
+		相対7月昼<input type="text"  name="param9" value="50" size = 5>相対7月夜<input type="text"  name="param21" value="50" size = 5><br>
+		相対8月昼<input type="text"  name="param10" value="50" size = 5>相対8月夜<input type="text"  name="param22" value="50" size = 5><br>
+		相対9月昼<input type="text"  name="param11" value="50" size = 5>相対9月夜<input type="text"  name="param23" value="50" size = 5><br>
+		相対10月昼<input type="text"  name="param12" value="50" size = 5>相対10月夜<input type="text"  name="param24" value="50" size = 5><br>
+		相対11月昼<input type="text"  name="param13" value="50" size = 5>相対11月夜<input type="text"  name="param25" value="50" size = 5><br>
+		相対12月昼<input type="text"  name="param14" value="50" size = 5>相対12月夜<input type="text"  name="param26" value="50" size = 5><br>
+		年間電力平均コスト<input type="text"  name="output1" value=""><br>
+		年間電力標準偏差<input type="text"  name="output2" value=""><br>
+        <input type="submit" value="add"><br>
+	</form>
+	<form name="form3" action="javascript:updateForm3()">
+        年間コスト<input type="radio"  name="annual" value="年間コスト">
+		シミュレーション推移<input type="radio"  name="annual" value="シミュレーション推移"><br>
+		仮想シナリオ<input type="radio"  name="scenario" value="仮想シナリオ">
+		2019<input type="radio"  name="scenario" value="2019"><br>
+		月間コスト<input type="radio"  name="Simutype" value="月コ">2月<input type="radio"  name="month" value="2"><br>
+		日間コスト<input type="radio"  name="Simutype" value="日コ">5月<input type="radio"  name="month" value="5"><br>
+		月間インバランス<input type="radio"  name="Simutype" value="月イ">8月<input type="radio"  name="month" value="8"><br>
+		日間インバランス<input type="radio"  name="Simutype" value="日イ">11月<input type="radio"  name="month" value="11"><br>
+		<input type="submit" value="描画"><br>
+	</form>
+	<input type="button" value="グラフ描画" onClick= "yyy.src='/graph1.png'" >
+	<input type="button" value="グラフ削除" onClick= "yyy.src=''">
+	<input type="button" value="入力リセット" onClick= "yyy.src='/reset'">
+	<img src=" " name="yyy">
+</html>
